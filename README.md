@@ -1,12 +1,12 @@
 <a href="https://github.com/GameDev46" title="Go to profile">
-    <img src="https://img.shields.io/static/v1?label=GameDev46&message=Profile&color=Green&logo=github&style=for-the-badge&labelColor=1f1f22" alt="GameDev46 - image_classifier">
+    <img src="https://img.shields.io/static/v1?label=GameDev46&message=|&color=Green&logo=github&style=for-the-badge&labelColor=1f1f22" alt="GameDev46 - image_classifier">
     <img src="https://img.shields.io/badge/Version-1.1.5-green?style=for-the-badge&labelColor=1f1f22&color=Green" alt="GameDev46 - image_classifier">
 </a>
 
 
-![Static Badge](https://img.shields.io/badge/-HTML5-1f1f22?style=for-the-badge&logo=HTML5)
-![Static Badge](https://img.shields.io/badge/-CSS-1f1f22?style=for-the-badge&logo=CSS3&logoColor=6060ef)
-![Static Badge](https://img.shields.io/badge/-JavaScript-1f1f22?style=for-the-badge&logo=JavaScript)
+![Static Badge](https://img.shields.io/badge/--1f1f22?style=for-the-badge&logo=HTML5)
+![Static Badge](https://img.shields.io/badge/--1f1f22?style=for-the-badge&logo=CSS3&logoColor=6060ef)
+![Static Badge](https://img.shields.io/badge/--1f1f22?style=for-the-badge&logo=JavaScript)
     
 <a href="https://github.com/GameDev46/fourier_transform/stargazers">
     <img src="https://img.shields.io/github/stars/GameDev46/fourier_transform?style=for-the-badge&labelColor=1f1f22" alt="stars - neural_drones">
@@ -19,17 +19,6 @@
 <a href="https://github.com/GameDev46/fourier_transform/issues">
     <img src="https://img.shields.io/github/issues/GameDev46/fourier_transform?style=for-the-badge&labelColor=1f1f22&color=blue"/>
  </a>
-
-<br>
-<br>
-
-<a href="https://github.com/GameDev46/fourier_transform/releases/">
-    <img src="https://img.shields.io/github/tag/GameDev46/fourier_transform?include_prereleases=&sort=semver&color=Green&style=for-the-badge&labelColor=1f1f22" alt="GitHub tag">
-</a>
-
-<a href="https://github.com/GameDev46/fourier_transform/issues">
-    <img src="https://img.shields.io/github/issues/GameDev46/fourier_transform?style=for-the-badge&labelColor=1f1f22" alt="issues - neural_drones">
-</a>
 
 <br>
 <br>
@@ -50,8 +39,21 @@
 
 
 # fourier_transform
+
 A JavaScript implementation of the Fourier transform algorithm
 
-## Website
+# Usage
 
-[click here for wesbite](https://gamedev46.github.io/fourier_transform/)
+Simply use your mouse or finger to draw on the black canvas and then release to see your drawing be approximated using waves of different frequencies, phases and amplitudes.
+
+# Screenshots
+
+<p>
+    <img src="https://github.com/GameDev46/fourier_transform/assets/76485006/0669a6d4-9257-47de-ac44-561eef9e7e67" height="200">
+    &nbsp;
+    <img src="https://github.com/GameDev46/fourier_transform/assets/76485006/77d3ab0c-b2e9-4c0e-bc13-fbeac55acee5" height="200">
+    &nbsp;
+    <img src="https://github.com/GameDev46/fourier_transform/assets/76485006/03709010-fb73-4813-8a5f-2b09f35bdbfb" height="200">
+    &nbsp;
+    <img src="https://github.com/GameDev46/fourier_transform/assets/76485006/8d840cb6-8fd2-4f83-be44-34753d68cca3" height="200">
+</p>
