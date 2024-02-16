@@ -18,6 +18,8 @@
 	twitter: https://twitter.com/GameDev46
 
 	Give clear and visible credit if using! (much appreciated 😄)
+
+ 	PLEASE DO NOT REMOVE THESE CREDITS!
 */
 
 const canvas = document.getElementById("canvas");
