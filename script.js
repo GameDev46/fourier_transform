@@ -1,22 +1,3 @@
-/*
-
- _____                         ______                 ___   ____ 
-|  __ \                        |  _  \               /   | / ___|
-| |  \/  __ _  _ __ ___    ___ | | | |  ___ __   __ / /| |/ /___ 
-| | __  / _` || '_ ` _ \  / _ \| | | | / _ \\ \ / // /_| || ___ \
-| |_\ \| (_| || | | | | ||  __/| |/ / |  __/ \ V / \___  || \_/ |
- \____/ \__,_||_| |_| |_| \___||___/   \___|  \_/      |_/\_____/
-
-
-*/
-
-/* 
-	AUTHOR: GameDev46
-
-	Youtube: https://www.youtube.com/@gamedev46
-	Github: https://github.com/GameDev46
-*/
-
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -29,9 +10,7 @@ window.addEventListener("resize", e => {
 })
 
 let wave = [];
-
 let time = 0;
-
 let waveComponents = [];
 
 let scroll = {
@@ -46,7 +25,6 @@ let scroll = {
 function dft(vals) {
 
 	let out = [];
-
 	const N = vals.length;
 
 	for (let k = 0; k < N; k++) {
@@ -55,12 +33,10 @@ function dft(vals) {
 		let imagine = 0;
 
 		for (let n = 0; n < N; n++) {
-
 			const phi = (2 * Math.PI * k * n) / N;
 
 			re += vals[n] * Math.cos(phi);
 			imagine -= vals[n] * Math.sin(phi);
-
 		}
 
 		re = re / N;
@@ -81,7 +57,6 @@ function dft(vals) {
 	}
 
 	return out;
-
 }
 
 // Draw circles
@@ -117,7 +92,6 @@ function epiCycles(x, y, fourier, rotation) {
 	}
 
 	return { x: x, y: y };
-
 }
 
 // Draw components of the grah
@@ -127,7 +101,6 @@ function components(fourier, rotation, type) {
 	for (let i = 0; i < fourier.length; i++) {
 
 		// Draw sine wave based on fourier transform
-
 		let freq = fourier[i].freq;
 		let radius = fourier[i].radius;
 		let phase = fourier[i].phase;
@@ -145,7 +118,6 @@ function components(fourier, rotation, type) {
 		let offsetY = (i * 100) + 100 + scroll.y;
 
 		// Draw circle
-
 		ctx.strokeStyle = "#FFFFFF";
 		ctx.lineCap = 'round';
 		ctx.lineWidth = 1;
@@ -161,16 +133,12 @@ function components(fourier, rotation, type) {
 		ctx.stroke();
 
 		// Draw graphs
-
 		drawGraph(waveComponents[i], type, 0, offsetY - (canvas.height * 0.5));
-
 		if (waveComponents[i].length > 300) waveComponents[i].pop();
-
 	}
 }
 
 function drawWave(wavePositions, offX, offY) {
-
 	let offsetX = canvas.width * 0.5;
 	let offsetY = canvas.height * 0.5;
 
@@ -178,7 +146,6 @@ function drawWave(wavePositions, offX, offY) {
 	offsetY += offY;
 
 	for (let i = 0; i < wavePositions.length - 1; i++) {
-
 		let n = i + 1;
 
 		let currentX = wavePositions[i].x;
@@ -196,13 +163,11 @@ function drawWave(wavePositions, offX, offY) {
 		ctx.moveTo(currentX + offsetX, currentY + offsetY);
 		ctx.lineTo(nextX + offsetX, nextY + offsetY);
 		ctx.stroke();
-
 	}
 
 }
 
 function drawGraph(wavePositions, type, offX, offY) {
-
 	let offsetX = canvas.width * 0.5;
 	let offsetY = canvas.height * 0.5;
 
@@ -227,7 +192,6 @@ function drawGraph(wavePositions, type, offX, offY) {
 		ctx.globalAlpha = 1;
 
 		// Draw the x movement graph
-
 		ctx.beginPath();
 		ctx.moveTo(i + offsetX, currentY + offsetY);
 		ctx.lineTo(n + offsetX, nextY + offsetY);
@@ -249,7 +213,6 @@ function drawLine(startX, startY, endX, endY) {
 }
 
 // Listen for mouse movements
-
 let mouse = {
 	x: 0,
 	y: 0,
@@ -257,40 +220,31 @@ let mouse = {
 }
 
 canvas.addEventListener("mousedown", e => {
-
 	mouse.isDown = true;
 	mouse.x = e.offsetX;
 	mouse.y = e.offsetY;
-
 	reset();
-
 })
 
 canvas.addEventListener("mousemove", e => {
-
 	mouse.x = e.offsetX;
 	mouse.y = e.offsetY;
 
 	if (mouse.isDown) {
-
 		mouseXPositions.push(mouse.x - (canvas.width * 0.5));
 		mouseYPositions.push(mouse.y - (canvas.height * 0.5));
 
 		if (state == "draw") {
-
 			wave.push({
 				x: mouse.x - (canvas.width * 0.5),
 				y: mouse.y - (canvas.height * 0.5)
 			})
-
 		}
-
 	}
 
 })
 
 canvas.addEventListener("mouseup", e => {
-
 	mouse.isDown = false;
 	mouse.x = e.offsetX;
 	mouse.y = e.offsetY;
@@ -298,17 +252,14 @@ canvas.addEventListener("mouseup", e => {
 	if (state == "draw") {
 		state = "transform";
 	}
-
 })
 
 canvas.addEventListener("touchstart", e => {
-
 	mouse.isDown = true;
 	mouse.x = e.touches[0].clientX;
 	mouse.y = e.touches[0].clientY;
 
 	reset();
-
 })
 
 canvas.addEventListener("touchmove", e => {
@@ -317,25 +268,20 @@ canvas.addEventListener("touchmove", e => {
 	mouse.y = e.touches[0].clientY;
 
 	if (mouse.isDown) {
-
 		mouseXPositions.push(mouse.x - (canvas.width * 0.5));
 		mouseYPositions.push(mouse.y - (canvas.height * 0.5));
 
 		if (state == "draw") {
-
 			wave.push({
 				x: mouse.x - (canvas.width * 0.5),
 				y: mouse.y - (canvas.height * 0.5)
 			})
-
 		}
-
 	}
 
 })
 
 canvas.addEventListener("touchend", e => {
-
 	mouse.isDown = false;
 	mouse.x = e.changedTouches[0].clientX;
 	mouse.y = e.changedTouches[0].clientY;
@@ -343,15 +289,11 @@ canvas.addEventListener("touchend", e => {
 	if (state == "draw") {
 		state = "transform";
 	}
-
 })
 
 // Listen for scrollwheel
-
 window.addEventListener("wheel", e => {
-
 	scroll.yPosition -= e.deltaY * 0.5;
-
 });
 
 function scrollMouse(delta) {
@@ -359,12 +301,11 @@ function scrollMouse(delta) {
 }
 
 function lerp( a, b, alpha ) {
- return a + alpha * ( b - a );
+	return a + alpha * ( b - a );
 }
 
 
 document.getElementById("modeSelect").addEventListener("change", e => {
-
 	state = document.getElementById("modeSelect").value;
 
 	wave = [];
@@ -377,12 +318,10 @@ document.getElementById("modeSelect").addEventListener("change", e => {
 	scroll.xPosition = 0;
 
 	time = 0;
-
 })
 
 
 // Game Loop
-
 let state = "draw";
 
 let fourierXData = [];
@@ -392,11 +331,9 @@ let mouseXPositions = [];
 let mouseYPositions = [];
 
 let lastDate = 0;
-
 let timeStep = 0;
 
 function reset() {
-
 	state = "draw";
 
 	fourierXData = [];
@@ -419,9 +356,7 @@ function reset() {
 }
 
 function loop(t) {
-
 	// Clear and colour canvas
-
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 	ctx.fillStyle = "#131313";
@@ -432,14 +367,10 @@ function loop(t) {
 	lastDate = t;
 
 	if (state == "draw") {
-
 		drawWave(wave, 0, 0);
-
 	}
 	else if (state == "transform") {
-
 		// Transform the mouse x and y positions
-
 		wave = [];
 
 		fourierXData = dft(mouseXPositions);
@@ -448,14 +379,10 @@ function loop(t) {
 		timeStep = (2 * Math.PI) / mouseXPositions.length;
 
 		state = document.getElementById("modeSelect").value;
-
 	}
 	else if (state == "render") {
-
 		// Render epiCycles and draw user input
-
 		// y positions are outputs - y then x axis
-
 		let left = epiCycles(100, canvas.height / 2, fourierYData, Math.PI * 0.5);
 		let top = epiCycles(canvas.width / 2, 100, fourierXData, 0);
 
@@ -483,7 +410,6 @@ function loop(t) {
 
 	}
 	else if (state == "graphs") {
-
 		let top = epiCycles(100, 100, fourierXData, Math.PI * 0.5);
 		let left = epiCycles(100, canvas.height - 150, fourierYData, Math.PI * 0.5);
 
@@ -503,25 +429,16 @@ function loop(t) {
 		if (wave.length > 500) {
 			wave.pop();
 		}
-
 	}
 	else if (state == "xComponents") {
-
 		scrollMouse(deltaTime);
-
 		components(fourierXData, Math.PI * 0.5, "x");
-
 		time += timeStep;
-
 	}
 	else if (state == "yComponents") {
-
 		scrollMouse(deltaTime);
-
 		components(fourierYData, Math.PI * 0.5, "y");
-
 		time += timeStep;
-
 	}
 
 	requestAnimationFrame(loop);
