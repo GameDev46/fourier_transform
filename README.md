@@ -35,15 +35,3 @@ A JavaScript implementation of the Fourier Transform algorithm with help from [T
 ## Usage
 
 Simply use your mouse or finger to draw on the black canvas and then release to see your drawing be approximated using waves of different frequencies, phases and amplitudes.
-
-## Screenshots
-
-<p>
-    <img src="https://github.com/GameDev46/fourier_transform/assets/76485006/0669a6d4-9257-47de-ac44-561eef9e7e67" height="150">
-    &nbsp;
-    <img src="https://github.com/GameDev46/fourier_transform/assets/76485006/77d3ab0c-b2e9-4c0e-bc13-fbeac55acee5" height="150">
-    &nbsp;
-    <img src="https://github.com/GameDev46/fourier_transform/assets/76485006/03709010-fb73-4813-8a5f-2b09f35bdbfb" height="150">
-    &nbsp;
-    <img src="https://github.com/GameDev46/fourier_transform/assets/76485006/8d840cb6-8fd2-4f83-be44-34753d68cca3" height="150">
-</p>
